@@ -7,6 +7,9 @@ bool newcustomer(double x);
 
 int main ()
 {
+
+
+
     using std::cin;
     using std::cout;
     using std::endl;
