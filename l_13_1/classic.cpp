@@ -11,10 +11,10 @@ Classic::Classic(char * s0, const Cd & d): Cd(d)
     std::strcpy(title_, s0);
     title_ [std::strlen(s0) + 1] = '\0';
 }
-/*Classic::Classic(): Cd()
+Classic::Classic(): Cd()
 {
     title_[0] = '\0';
-}*/
+}
 Classic::~Classic()
 {
 
