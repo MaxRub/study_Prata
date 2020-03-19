@@ -4,4 +4,10 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+        port.cpp \
+        vintage.cpp
+
+HEADERS += \
+    port.h \
+    vintage.h
