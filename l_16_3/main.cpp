@@ -20,10 +20,10 @@ int main()
     cout << "Will you play a word game? <y/n> ";
     cin >> play;
     play = tolower(play);
+    ifstream fin;
     while(play == 'y')
     {
         vector<string> wordlist;
-        ifstream fin;
         fin.open("wordlist");
         if (fin.is_open() == false)
         {
@@ -94,6 +94,7 @@ int main()
         cin >> play;
         play = tolower(play);
     }
+    fin.close();
     cout << "Hello World!" << endl;
     return 0;
 }
