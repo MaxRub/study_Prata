@@ -1,9 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <list>         //unique() and sort()
+#include <list>         //sort()
 #include <iterator>     //back_inserter()
-#include <algorithm>    //copy() and for_each()
+#include <algorithm>    //unique(), copy() and for_each()
 #include <cstdlib>      //exit()
 void ShowData (const std::string & s);
 int main()
@@ -68,13 +68,15 @@ int main()
     copy(pat_ls.begin(), pat_ls.end(), back_inserter(mat_pat_ls));
 
     mat_pat_ls.sort();
-    mat_pat_ls.unique();
+    list<string>::iterator it = unique(mat_pat_ls.begin(),
+                                       mat_pat_ls.end());
+    mat_pat_ls.erase(it ,mat_pat_ls.end());
 
     if (fout_mat_pat.is_open())
     {
         fout_mat_pat << "\tMat and Pat have "
                      << mat_pat_ls.size() << " friends:";
-        for (list<string>::iterator it = mat_pat_ls.begin();
+        for (it = mat_pat_ls.begin();
              it != mat_pat_ls.end(); ++it)
             fout_mat_pat << *it << endl;
     }
